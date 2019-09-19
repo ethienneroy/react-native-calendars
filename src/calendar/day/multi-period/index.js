@@ -66,6 +66,7 @@ class Day extends Component {
         }
         return (<View key={index} style={style}>
           {this.props.text && <Text style={{fontSize: 6}} numberOfLines={2}>{this.props.text}</Text>}
+          </View>
       );
       });
     }
