@@ -7,7 +7,7 @@ import styleConstructor from './style';
 
 class Day extends Component {
   static displayName = 'IGNORE';
-  
+
   static propTypes = {
     // TODO: disabled props should be removed
     state: PropTypes.oneOf(['disabled', 'today', '']),
@@ -47,6 +47,7 @@ class Day extends Component {
           ...baseDotStyle,
           {
             backgroundColor: period.color,
+            height: 16,
           },
         ];
         if (period.startingDay) {
@@ -63,7 +64,9 @@ class Day extends Component {
             marginRight: 4,
           });
         }
-        return <View key={index} style={style} />;
+        return (<View key={index} style={style}>
+          {this.props.text && <Text style={{fontSize: 6}} numberOfLines={2}>{this.props.text}</Text>}
+      );
       });
     }
     return;
